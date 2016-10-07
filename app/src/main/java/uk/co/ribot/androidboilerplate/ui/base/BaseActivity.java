@@ -1,7 +1,8 @@
 package uk.co.ribot.androidboilerplate.ui.base;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
+import com.trello.rxlifecycle.components.support.RxAppCompatActivity;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,7 +20,7 @@ import uk.co.ribot.androidboilerplate.injection.module.ActivityModule;
  * creation of Dagger components and makes sure that instances of ConfigPersistentComponent survive
  * across configuration changes.
  */
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends RxAppCompatActivity {
 
     private static final String KEY_ACTIVITY_ID = "KEY_ACTIVITY_ID";
     private static final AtomicLong NEXT_ID = new AtomicLong(0);

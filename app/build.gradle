@@ -70,6 +70,11 @@ android {
     lintOptions {
         warning 'InvalidPackage'
     }
+
+    // resolve app/test app conflict.
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
+    }
 }
 
 play {
@@ -99,6 +104,7 @@ dependencies {
     compile "com.github.bumptech.glide:glide:$GLIDE_VERSION"
     compile "io.reactivex:rxjava:$RXJAVA_VERSION"
     compile "io.reactivex:rxandroid:$RXANDROID_VERSION"
+    compile "com.trello:rxlifecycle-components:$RXLIFECYCLE_VERSION"
     compile('com.crashlytics.sdk.android:crashlytics:2.5.7@aar') {
         transitive = true;
     }
